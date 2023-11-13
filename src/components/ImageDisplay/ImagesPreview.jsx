@@ -9,7 +9,6 @@ const ImagesPreview = () => {
         <Paper
             sx={{
                 borderRadius: '16px',
-                width: '80%',
                 height: '20%',
                 margin: 'auto'
             }}
@@ -40,8 +39,8 @@ const itemData = [
     {
         img: '/img/hunting/pool.webp',
         title: 'Pool',
-        rows: 2,
-        cols: 2,
+        rows: 1,
+        cols: 1,
     },
     {
         img: '/img/hunting/master-bed.webp',
@@ -57,13 +56,31 @@ const itemData = [
     },
     {
         img: '/img/hunting/tv-from-table.webp',
-        title: 'Coffee',
+        title: 'TV',
         rows: 1,
         cols: 1,
     },
     {
         img: '/img/hunting/back-patio.webp',
-        title: 'Hats',
+        title: 'Back Patio',
+        rows: 1,
+        cols: 1,
+    },
+    {
+        img: '/img/hunting/backside-of-couch.webp',
+        title: 'Living Room',
+        rows: 1,
+        cols: 1,
+    },
+    {
+        img: '/img/hunting/bathroom-full.webp',
+        title: 'Full Bathroom',
+        rows: 1,
+        cols: 1,
+    },
+    {
+        img: '/img/hunting/swing.webp',
+        title: 'Swing',
         rows: 1,
         cols: 1,
     }

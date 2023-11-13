@@ -1,4 +1,5 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import 'react-day-picker/dist/style.css';
 import '@/styles/app.css';
 
 const theme = createTheme({
@@ -16,6 +17,7 @@ const theme = createTheme({
         styleOverrides: {
           img: {
             //objectFit: 'fill'
+            borderRadius: '8px'
           }
         }
       },

@@ -8,7 +8,6 @@ const ListingIntro = () => {
         >
             <Typography 
                 sx={{
-                    width: '80%',
                     margin: 'auto',
                     marginTop: '12px'
                 }}
@@ -18,7 +17,6 @@ const ListingIntro = () => {
             </Typography>
             <Typography 
                 sx={{
-                    width: '80%',
                     margin: 'auto'
                 }}
                 variant="subtitle2"

@@ -5,8 +5,6 @@ const ListingHeader = () => {
     return (
         <Typography 
             sx={{
-                width: '80%',
-                margin: 'auto',
                 marginTop: '12px'
             }}
             variant="h5"
