@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
 
-const ListingDescription = () => {
+const ListingDescription = (props) => {
     return (
         <>
             <Typography 

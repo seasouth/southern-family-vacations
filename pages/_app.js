@@ -13,6 +13,7 @@ const theme = createTheme({
           }
         }
       },
+      /**
       MuiImageListItem: {
         styleOverrides: {
           img: {
@@ -21,6 +22,7 @@ const theme = createTheme({
           }
         }
       },
+      */
       MuiCard: {
         styleOverrides: {
           root: {

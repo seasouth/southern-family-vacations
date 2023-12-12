@@ -2,6 +2,7 @@ import Head from 'next/head'
 import LandingHeader from '@/components/HUD/LandingHeader'
 import ImagesPreview from '@/components/ImageDisplay/ImagesPreview'
 import ListingPage from '@/components/ListingPage'
+import ListingTabs from '@/components/ListingTabs'
 import Quilted from '@/components/ImageDisplay/Quilted'
 import { Inter } from 'next/font/google'
 
@@ -21,7 +22,7 @@ const Home = () => {
             <main className={styles.main}>
                 <div className={styles.App}>
                     <LandingHeader />
-                    <ListingPage />
+                    <ListingTabs />
                 </div>
             </main>
         </>

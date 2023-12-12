@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { addDays, format } from 'date-fns';
 import { DateRange, DayPicker } from 'react-day-picker';
+import { Grid, TextField } from '@mui/material';
 
-const pastMonth = new Date(2020, 10, 15);
+const pastMonth = new Date();
 
 const defaultSelected = {
     from: pastMonth,
@@ -12,23 +13,30 @@ const defaultSelected = {
 const ListingCalendar = () => {
     const [range, setRange] = useState(defaultSelected);
 
-    let footer = <p>Please pick the first day.</p>;
-    if (range?.from) {
-        if (!range.to) {
-            footer = <p>{"Check-in: " + format(range.from, 'PPP')}</p>;
-        } else if (range.to) {
-            footer = (
-            <>
-                <p>
-                    Check-in: {format(range.from, 'PPP')}
-                </p>
-                <p>
-                    Check-out: {format(range.to, 'PPP')}
-                </p>
-            </>
-            );
-        }
-    }
+    let footer = (
+        <Grid container spacing={0.5}>
+            <Grid item xs={6}>
+                <TextField 
+                    id="checkin" 
+                    label="Check-in" 
+                    variant="outlined"
+                    size="small"
+                    color="primary"
+                    value={range?.from ? format(range.from, 'P') : ""}
+                />
+            </Grid>
+            <Grid item xs={6}>
+                <TextField 
+                    id="checkin" 
+                    label="Check-out" 
+                    variant="outlined"
+                    size="small"
+                    color="primary"
+                    value={range?.to ? format(range.to, 'P') : ""}
+                />
+            </Grid>
+        </Grid>
+    );
 
     return (
         <DayPicker

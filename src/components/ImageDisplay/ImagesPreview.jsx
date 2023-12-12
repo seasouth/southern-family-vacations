@@ -1,18 +1,17 @@
 import * as React from 'react';
 import Image from 'next/image';
 import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import ViewAllButton from './ViewAllButton';
 
 const ImagesPreview = () => {
     return (
-        <Paper
+        <Box
             sx={{
-                borderRadius: '16px',
-                height: '20%',
-                margin: 'auto'
+                position: 'relative',
             }}
-            elevation={4}
         >
             <ImageList
                 variant="quilted"
@@ -29,7 +28,8 @@ const ImagesPreview = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
-        </Paper>
+            <ViewAllButton />
+        </Box>
     )
 }
 

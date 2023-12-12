@@ -1,7 +1,9 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
 
-const ListingHeader = () => {
+const ListingHeader = ({
+    title
+}) => {
     return (
         <Typography 
             sx={{
@@ -10,7 +12,7 @@ const ListingHeader = () => {
             variant="h5"
             gutterBottom
         >
-            Southern Hideaway - King Bed!
+            {title}
         </Typography>
     )
 }
