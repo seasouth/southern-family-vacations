@@ -1,10 +1,22 @@
-import React from 'react'
-import { Grid, Link, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import { Button, Grid, Link, Popover, Typography } from '@mui/material'
 
 const ListingIntro = ({
     summary,
     offerings
 }) => {
+    const [popped, setPopped] = useState(false);
+    const [anchor, setAnchor] = useState(null);
+
+    const handleClickPopover = (event) => {
+        setPopped(true);
+        setAnchor(event.currentTarget);
+    }
+
+    const handleClosePopover = () => {
+        setPopped(false);
+    }
+
     return (
         <div
             style={{marginLeft: '4px'}}
@@ -26,15 +38,45 @@ const ListingIntro = ({
                     </Link>
                 </Grid>
             </Grid>
-            <Typography 
-                sx={{
-                    margin: 'auto'
-                }}
-                variant="subtitle2"
-                gutterBottom
-            >
-                {offerings}
-            </Typography>
+            <Grid container>
+                <Grid item xs={8}>
+                    <Typography 
+                        sx={{
+                            margin: 'auto'
+                        }}
+                        variant="subtitle2"
+                        gutterBottom
+                    >
+                        {offerings}
+                    </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                    <div
+                        onClick={handleClickPopover}
+                    >
+                        <Typography 
+                            sx={{
+                                margin: 'auto'
+                            }}
+                            variant="overline"
+                            gutterBottom
+                        >
+                            But click here for no fees!
+                        </Typography>
+                    </div>
+                    <Popover
+                        open={popped}
+                        anchorEl={anchor}
+                        onClose={handleClosePopover}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                    >
+                        <Typography sx={{ p: 2 }}>Contact Info here</Typography>
+                    </Popover>
+                </Grid>
+            </Grid>
         </div>
     )
 }

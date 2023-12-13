@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -6,7 +6,19 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ViewAllButton from './ViewAllButton';
 
-const ImagesPreview = () => {
+const ImagesPreview = ({
+    location
+}) => {
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        if (location === "Matthews") {
+            setImages(basementPhotos);
+        } else {
+            setImages(beachHousePhotos);
+        }
+    }, [location]);
+
     return (
         <Box
             sx={{
@@ -18,7 +30,7 @@ const ImagesPreview = () => {
                 cols={4}
                 rowHeight={200}
             >
-                {itemData.map((item) => (
+                {images.map((item) => (
                     <ImageListItem key={item.img} cols={item.cols} rows={item.rows}>
                         <img
                             src={item.img}
@@ -28,14 +40,16 @@ const ImagesPreview = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
-            <ViewAllButton />
+            <ViewAllButton 
+                location={location}
+            />
         </Box>
     )
 }
 
 export default ImagesPreview;
 
-const itemData = [
+const basementPhotos = [
     {
         img: '/img/hunting/pool.webp',
         title: 'Pool',
@@ -85,3 +99,54 @@ const itemData = [
         cols: 1,
     }
 ];
+
+const beachHousePhotos = [
+    {
+        img: '/img/sailfish/palm-tree.webp',
+        title: 'Palm tree',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/pool-lounge.webp',
+        title: 'Pool lounge',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/adirondack-pool.webp',
+        title: 'Adirondack pool',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/nighttime-pool-lights.webp',
+        title: 'Nighttime pool lights',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/parking-front.webp',
+        title: 'Parking front',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/family-tv.webp',
+        title: 'Family TV',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/family-couch.webp',
+        title: 'Family couch',
+        rows: 1,
+        cols: 1
+    },
+    {
+        img: '/img/sailfish/pool-shiny.webp',
+        title: 'Pool shiny',
+        rows: 1,
+        cols: 1
+    },
+]

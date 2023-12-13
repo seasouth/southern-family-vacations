@@ -40,7 +40,9 @@ const ListingPage = ({
             <ListingHeader 
                 title={title}
             />
-            <ImagesPreview />
+            <ImagesPreview 
+                location={location}
+            />
             <ListingIntro
                 summary={summary}
                 offerings={offerings}

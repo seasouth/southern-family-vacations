@@ -14,7 +14,7 @@ const Coordinates = {
 }
 
 const ListingTabs = () => {
-    const [currentTab, setCurrentTab] = useState("0");
+    const [currentTab, setCurrentTab] = useState("Matthews");
 
     const handleTabChange = (event, newTab) => {
         setCurrentTab(newTab);
@@ -33,19 +33,19 @@ const ListingTabs = () => {
             >
                 <Tab
                     label="Matthews"
-                    value="0"
+                    value="Matthews"
                 />
                 <Tab 
                     label="Ponte Vedra"
-                    value="1"
+                    value="Ponte Vedra"
                 />
             </Tabs>
             <Divider />
-            {currentTab === "0" &&
+            {currentTab === "Matthews" &&
             <ListingPage 
                 location={currentTab}
                 title="Southern Hideaway - King Bed!"
-                summary="Entire home in Matthews, North Carolina"
+                summary="Entire basement in Matthews, North Carolina"
                 offerings="4 guests ~ 2 bedrooms ~ 3 beds ~ 1.5 baths"
                 lat={Coordinates.Basement.latitude}
                 long={Coordinates.Basement.longitude}
@@ -82,7 +82,7 @@ const ListingTabs = () => {
                     </Typography>
                 </>
             </ListingPage>}
-            {currentTab === "1" &&
+            {currentTab === "Ponte Vedra" &&
             <ListingPage 
                 location={currentTab}
                 title="Pool Home at Ponte Vedra Beach"
