@@ -90,7 +90,6 @@ const ListingTabs = () => {
                 offerings="7 guests ~ 3 bedrooms ~ 5 beds ~ 2 baths"
                 lat={Coordinates.Sailfish.latitude}
                 long={Coordinates.Sailfish.longitude}
-                children
             >
                 <>
                     <Typography 
