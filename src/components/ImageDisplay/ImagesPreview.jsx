@@ -5,8 +5,13 @@ import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ViewAllButton from './ViewAllButton';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { FreeMode, Navigation } from "swiper/modules"
+import "swiper/css";
+import "swiper/css/navigation";
 
 const ImagesPreview = ({
+    isMobile,
     location
 }) => {
     const [images, setImages] = useState([]);
@@ -20,30 +25,64 @@ const ImagesPreview = ({
     }, [location]);
 
     return (
-        <Box
-            sx={{
-                position: 'relative',
-            }}
-        >
-            <ImageList
-                variant="quilted"
-                cols={4}
-                rowHeight={200}
+        <>{
+            isMobile ?
+            <>
+            {/**
+            <Swiper
+                key={location}
+                modules={[FreeMode, Navigation]}
+                slidesPerView={1}
+                spaceBetween={3}
+                navigation={true}
+                freeMode={true}
+                loop={true}
+                style={{
+                    '--swiper-navigation-size': '20px',
+                    '--swiper-navigation-sides-offset': '4px',
+                    '--swiper-theme-color': 'whitesmoke'
+                }}
             >
-                {images.map((item) => (
-                    <ImageListItem key={item.img} cols={item.cols} rows={item.rows}>
-                        <img
-                            src={item.img}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
-            <ViewAllButton 
-                location={location}
-            />
-        </Box>
+                {images.map((item) =>
+                    <SwiperSlide key={`${item.img}`}>
+                        <ImageListItem key={item.img}>
+                            <img
+                                src={item.img}
+                                alt={item.title}
+                                loading="lazy"
+                            />
+                        </ImageListItem>
+                    </SwiperSlide>
+                )}
+            </Swiper>
+            */}
+            </>
+            :
+            <Box
+                sx={{
+                    position: 'relative',
+                }}
+            >
+                <ImageList
+                    variant="quilted"
+                    cols={4}
+                    rowHeight={200}
+                >
+                    {images.map((item) => (
+                        <ImageListItem key={item.img} cols={item.cols} rows={item.rows}>
+                            <img
+                                src={item.img}
+                                alt={item.title}
+                                loading="lazy"
+                            />
+                        </ImageListItem>
+                    ))}
+                </ImageList>
+                <ViewAllButton 
+                    location={location}
+                />
+            </Box>
+        }</>
     )
 }
 

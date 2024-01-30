@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Map, GeoJson, GeoJsonFeature, ZoomControl } from "pigeon-maps";
 import 'leaflet/dist/leaflet.css'
 
-const ListingMap = ({lat, long}) => {
+const ListingMap = ({lat, long, isMobile}) => {
     const circleSize = 0.04;
     const numPoints = 1000;
     const generateCircle = () => {
@@ -35,9 +35,9 @@ const ListingMap = ({lat, long}) => {
 
     return (
         <Map 
-            height={300} 
+            height={isMobile ? 250 : 300} 
             defaultCenter={[lat, long]}
-            defaultZoom={9}
+            defaultZoom={10}
             maxZoom={13}
         >
             <GeoJson

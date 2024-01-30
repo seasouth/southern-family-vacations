@@ -2,18 +2,31 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 
 const ListingHeader = ({
-    title
+    title,
+    isMobile
 }) => {
     return (
-        <Typography 
-            sx={{
-                marginTop: '12px'
-            }}
-            variant="h5"
-            gutterBottom
-        >
-            {title}
-        </Typography>
+        <>{
+            isMobile ?
+            <Typography 
+                sx={{
+                    marginTop: '12px'
+                }}
+                variant="h4"
+            >
+                {title}
+            </Typography>
+            :
+            <Typography 
+                sx={{
+                    marginTop: '12px'
+                }}
+                variant="h5"
+                gutterBottom
+            >
+                {title}
+            </Typography>
+        }</>
     )
 }
 

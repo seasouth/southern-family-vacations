@@ -23,6 +23,8 @@ const Coordinates = {
 
 const ListingPage = ({
     location,
+    link,
+    isMobile,
     title,
     summary,
     offerings,
@@ -36,34 +38,67 @@ const ListingPage = ({
         { ssr: false }
     )
     return (
-        <>
-            <ListingHeader 
-                title={title}
-            />
-            <ImagesPreview 
-                location={location}
-            />
-            <ListingIntro
-                summary={summary}
-                offerings={offerings}
-            />
-            <br />
-            <Divider />
-            <Divider />
-            <Grid sx={{ flexGrow: 1 }} container justifyContent="center" spacing={2}>
-                <Grid sx={{ width:'30%'}} key={"Calendar"} item>
-                    {/** <ListingCalendar /> */}
-                    <LocalMap
-                        lat={lat}
-                        long={long}
-                    />
-                </Grid>
-                <Grid  sx={{ width:'70%'}} key={"Description"} item>
+        <>{
+        isMobile ?
+            <>
+                <ListingHeader 
+                    title={title}
+                    isMobile={isMobile}
+                />
+                <ListingIntro
+                    link={link}
+                    summary={summary}
+                    offerings={offerings}
+                    isMobile={isMobile}
+                />
+                <br />
+                <Divider />
+                <Divider />
+                <LocalMap
+                    lat={lat}
+                    long={long}
+                    isMobile={isMobile}
+                />
+                <>
                     {children}
+                </>
+                <br />
+            </>
+            :
+            <>
+                <ListingHeader 
+                    title={title}
+                    isMobile={isMobile}
+                />
+                <ImagesPreview
+                    isMobile={isMobile}
+                    location={location}
+                />
+                <ListingIntro
+                    link={link}
+                    summary={summary}
+                    offerings={offerings}
+                    isMobile={isMobile}
+                />
+                <br />
+                <Divider />
+                <Divider />
+                <Grid sx={{ flexGrow: 1 }} container justifyContent="center" spacing={2}>
+                    <Grid sx={{ width:'30%'}} key={"Calendar"} item>
+                        {/** <ListingCalendar /> */}
+                        <LocalMap
+                            lat={lat}
+                            long={long}
+                            isMobile={isMobile}
+                        />
+                    </Grid>
+                    <Grid  sx={{ width:'70%'}} key={"Description"} item>
+                        {children}
+                    </Grid>
                 </Grid>
-            </Grid>
-            <br />
-        </>
+                <br />
+            </>
+        }</>
     )
 }
 
