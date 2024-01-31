@@ -41,6 +41,11 @@ const ListingPage = ({
         <>{
         isMobile ?
             <>
+                <br />
+                <ImagesPreview
+                    isMobile={isMobile}
+                    location={location}
+                />
                 <ListingHeader 
                     title={title}
                     isMobile={isMobile}

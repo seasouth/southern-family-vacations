@@ -6,7 +6,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ViewAllButton from './ViewAllButton';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation } from "swiper/modules"
+import { Pagination, FreeMode, Navigation } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -28,34 +28,39 @@ const ImagesPreview = ({
         <>{
             isMobile ?
             <>
-            {/**
             <Swiper
                 key={location}
-                modules={[FreeMode, Navigation]}
+                modules={[Pagination]}
                 slidesPerView={1}
-                spaceBetween={3}
-                navigation={true}
-                freeMode={true}
-                loop={true}
-                style={{
-                    '--swiper-navigation-size': '20px',
-                    '--swiper-navigation-sides-offset': '4px',
-                    '--swiper-theme-color': 'whitesmoke'
+                pagination={{
+                    clickable: true,
                 }}
+                //spaceBetween={3}
+                //navigation={true}
+                //freeMode={true}
+                loop={false}
             >
                 {images.map((item) =>
                     <SwiperSlide key={`${item.img}`}>
-                        <ImageListItem key={item.img}>
-                            <img
-                                src={item.img}
-                                alt={item.title}
-                                loading="lazy"
-                            />
-                        </ImageListItem>
+                        {/**
+                        <img
+                            src={item.img}
+                            alt={item.title}
+                            loading="lazy"
+                        />
+                        */}
+                        {
+                        <Image
+                            src={item.img}
+                            //fill={true}
+                            width={350}
+                            height={350}
+                            alt={item.title}
+                        />
+                        }
                     </SwiperSlide>
                 )}
             </Swiper>
-            */}
             </>
             :
             <Box
