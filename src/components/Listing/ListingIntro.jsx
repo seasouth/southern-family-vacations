@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
 import { Button, Divider, Grid, Link, Popover, Typography } from '@mui/material'
 
 const ListingIntro = ({
@@ -28,14 +29,6 @@ const ListingIntro = ({
                 >
                     {summary}
                 </Typography>
-                <br />
-                <Link
-                    href={link} 
-                    variant="h6"
-                >
-                    Please see AirBnb for availability
-                </Link>
-                <br />
                 <Typography 
                     sx={{
                         margin: 'auto'
@@ -45,18 +38,19 @@ const ListingIntro = ({
                 >
                     {offerings}
                 </Typography>
-                <div
-                    onClick={handleClickPopover}
+                <br />
+                <Button
+                    href={link}
                 >
-                    <Typography 
-                        sx={{
-                            margin: 'auto'
-                        }}
-                        variant="overline"
-                    >
-                        But reach out directly for no fees!
-                    </Typography>
-                </div>
+                    Please see AirBnb for availability
+                </Button>
+                <br />
+                <Button
+                    onClick={handleClickPopover}
+                    variant="contained"
+                >
+                    But see here for no fees!
+                </Button>
                 <Popover
                     open={popped}
                     anchorEl={anchor}
@@ -66,7 +60,14 @@ const ListingIntro = ({
                         horizontal: 'left',
                     }}
                 >
-                    <Typography sx={{ p: 2 }}>property@thesoutherns.net</Typography>
+                    <Typography sx={{ p: 2 }}>Email: property@thesoutherns.net</Typography>
+                    <Image
+                        src={'/img/ColeVenmoQRCode.png'}
+                        //fill={true}
+                        width={250}
+                        height={250}
+                        alt={'QR Code'}
+                    />
                 </Popover>
             </div>
             :
@@ -82,12 +83,11 @@ const ListingIntro = ({
                         </Typography>
                     </Grid>
                     <Grid item xs={4}>
-                        <Link
+                        <Button
                             href={link}
-                            variant="h5"
                         >
                             Please see AirBnb for availability
-                        </Link>
+                        </Button>
                     </Grid>
                 </Grid>
                 <Grid container>
@@ -103,19 +103,12 @@ const ListingIntro = ({
                         </Typography>
                     </Grid>
                     <Grid item xs={4}>
-                        <div
+                        <Button
                             onClick={handleClickPopover}
+                            variant="contained"
                         >
-                            <Typography 
-                                sx={{
-                                    margin: 'auto'
-                                }}
-                                variant="overline"
-                                gutterBottom
-                            >
-                                But reach out directly for no fees!
-                            </Typography>
-                        </div>
+                            But see here for no fees!
+                        </Button>
                         <Popover
                             open={popped}
                             anchorEl={anchor}
@@ -125,7 +118,15 @@ const ListingIntro = ({
                                 horizontal: 'left',
                             }}
                         >
-                            <Typography sx={{ p: 2 }}>property@thesoutherns.net</Typography>
+                            <Typography sx={{ p: 2 }}>Email: property@thesoutherns.net</Typography>
+                            <Typography sx={{ paddingLeft: 2 }}>Venmo:</Typography>
+                            <Image
+                                src={'/img/ColeVenmoQRCode.png'}
+                                //fill={true}
+                                width={350}
+                                height={350}
+                                alt={'Venmo'}
+                            />
                         </Popover>
                     </Grid>
                 </Grid>
