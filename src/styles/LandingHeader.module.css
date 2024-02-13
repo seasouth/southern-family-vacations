@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
 .header {
     display: flex;
     position: sticky;
@@ -22,8 +24,8 @@
 }
 
 .headerTitle {
-    font-family: Garamond, serif;
-    font-weight: 500;
-    color: black;
+    font-family: 'DM Serif Display', serif;;
+    font-weight: 450;
+    color: gainsboro;
     margin: auto;
 }

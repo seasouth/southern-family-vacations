@@ -42,13 +42,6 @@ const ImagesPreview = ({
             >
                 {images.map((item) =>
                     <SwiperSlide key={`${item.img}`}>
-                        {/**
-                        <img
-                            src={item.img}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                        */}
                         {
                         <Image
                             src={item.img}

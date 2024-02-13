@@ -49,7 +49,7 @@ const ListingIntro = ({
                     onClick={handleClickPopover}
                     variant="contained"
                 >
-                    But see here for no fees!
+                    Click here for no fees!
                 </Button>
                 <Popover
                     open={popped}
@@ -62,9 +62,9 @@ const ListingIntro = ({
                 >
                     <Typography sx={{ p: 2 }}>Email: property@thesoutherns.net</Typography>
                     <Image
-                        src={'/img/ColeVenmoQRCode.png'}
+                        src={'/img/VenmoQRCode.png'}
                         //fill={true}
-                        width={250}
+                        width={275}
                         height={250}
                         alt={'QR Code'}
                     />
@@ -107,7 +107,7 @@ const ListingIntro = ({
                             onClick={handleClickPopover}
                             variant="contained"
                         >
-                            But see here for no fees!
+                            Click here for no fees!
                         </Button>
                         <Popover
                             open={popped}
@@ -119,12 +119,12 @@ const ListingIntro = ({
                             }}
                         >
                             <Typography sx={{ p: 2 }}>Email: property@thesoutherns.net</Typography>
-                            <Typography sx={{ paddingLeft: 2 }}>Venmo:</Typography>
+                            {/** <Typography sx={{ paddingLeft: 2 }}>Venmo:</Typography> */}
                             <Image
-                                src={'/img/ColeVenmoQRCode.png'}
+                                src={'/img/VenmoQRCode.png'}
                                 //fill={true}
                                 width={350}
-                                height={350}
+                                height={325}
                                 alt={'Venmo'}
                             />
                         </Popover>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
 import Dialog from '@mui/material/Dialog';
+import CloseIcon from '@mui/icons-material/Close';
 import CollectionsIcon from '@mui/icons-material/Collections';
-import Stack from '@mui/material/Stack';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
@@ -63,6 +62,19 @@ const ViewAllButton = ({
                 onClose={() => setOpen(false)}
                 maxWidth='lg'
             >
+                <Fab 
+                    size="small"
+                    onClick={() => setOpen(false)}
+                    aria-label="add"
+                    sx={{
+                        position: 'absolute',
+                        top: 16,
+                        left: 16,
+                        //alignContent: 'space-between'
+                    }}
+                >
+                    <CloseIcon />
+                </Fab>
                 <AllImages 
                     location={location}
                 />

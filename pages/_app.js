@@ -9,20 +9,11 @@ const theme = createTheme({
       MuiImageList: {
         styleOverrides: {
           root: {
-            borderRadius: 'inherit'
+            borderRadius: 'inherit',
+            margin: '0px'
           }
         }
       },
-      /**
-      MuiImageListItem: {
-        styleOverrides: {
-          img: {
-            //objectFit: 'fill'
-            borderRadius: '8px'
-          }
-        }
-      },
-      */
       MuiCard: {
         styleOverrides: {
           root: {
