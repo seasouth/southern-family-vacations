@@ -4,7 +4,7 @@ import { Map, GeoJson, GeoJsonFeature, ZoomControl } from "pigeon-maps";
 import 'leaflet/dist/leaflet.css'
 
 const ListingMap = ({lat, long, isMobile}) => {
-    const circleSize = 0.04;
+    const circleSize = 0.015;
     const numPoints = 1000;
     const generateCircle = () => {
         const outerPoints = [];
@@ -37,8 +37,8 @@ const ListingMap = ({lat, long, isMobile}) => {
         <Map 
             height={isMobile ? 250 : 300} 
             defaultCenter={[lat, long]}
-            defaultZoom={10}
-            maxZoom={13}
+            defaultZoom={11}
+            maxZoom={14}
         >
             <GeoJson
                 svgAttributes={{
