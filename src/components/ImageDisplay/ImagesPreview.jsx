@@ -30,15 +30,20 @@ const ImagesPreview = ({
             <>
             <Swiper
                 key={location}
-                modules={[Pagination]}
+                modules={[Pagination, Navigation]}
                 slidesPerView={1}
                 pagination={{
                     clickable: true,
                 }}
                 //spaceBetween={3}
-                //navigation={true}
+                navigation={true}
                 //freeMode={true}
-                loop={false}
+                loop={true}
+                style={{
+                    '--swiper-navigation-size': '20px',
+                    '--swiper-navigation-sides-offset': '4px',
+                    '--swiper-theme-color': 'whitesmoke'
+                }}
             >
                 {images.map((item) =>
                     <SwiperSlide key={`${item.img}`}>
@@ -139,20 +144,20 @@ const basementPhotos = [
 
 const beachHousePhotos = [
     {
-        img: '/img/sailfish/palm-tree.webp',
-        title: 'Palm tree',
+        img: '/img/sailfish/pool-lounge-chairs.webp',
+        title: 'Lounge chairs by the pool',
         rows: 1,
         cols: 1
     },
     {
-        img: '/img/sailfish/pool-lounge.webp',
-        title: 'Pool lounge',
+        img: '/img/sailfish/kitchen-table.webp',
+        title: 'Kitchen and dining table',
         rows: 1,
         cols: 1
     },
     {
-        img: '/img/sailfish/adirondack-pool.webp',
-        title: 'Adirondack pool',
+        img: '/img/sailfish/pool-deep-end.webp',
+        title: 'Pool deep end',
         rows: 1,
         cols: 1
     },
@@ -181,7 +186,7 @@ const beachHousePhotos = [
         cols: 1
     },
     {
-        img: '/img/sailfish/pool-shiny.webp',
+        img: '/img/sailfish/pool-adirondacks.webp',
         title: 'Pool shiny',
         rows: 1,
         cols: 1

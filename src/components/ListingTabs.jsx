@@ -33,12 +33,13 @@ const ListingTabs = () => {
         <Container
             sx={{
                 width: isMobile ? '98%' : '80%',
-                margin: 'auto'
+                margin: 'auto',
             }}
         >
             <Tabs
                 value={currentTab}
                 onChange={handleTabChange}
+                variant={isMobile ? 'fullWidth' : 'default'}
             >
                 <Tab 
                     label="Ponte Vedra"

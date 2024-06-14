@@ -151,34 +151,38 @@ const beachHousePhotos = [
     },
     {
         img: '/img/sailfish/kitchen.webp',
-        title: 'Pool shiny',
+        title: 'Kitchen',
     },
     {
         img: '/img/sailfish/family-room-kitchen.webp',
-        title: 'Pool shiny',
+        title: 'Family room kitchen',
     },
     {
         img: '/img/sailfish/breakfast-area.webp',
-        title: 'Pool shiny',
+        title: 'Breakfast area',
     },
     {
         img: '/img/sailfish/pool-from-breakfast-bar.webp',
-        title: 'Pool shiny',
+        title: 'Breakfast bar',
     },
     {
         img: '/img/sailfish/front-hallway.webp',
-        title: 'Pool shiny',
+        title: 'Front hallway',
     },
     {
         img: '/img/sailfish/kitchen-table.webp',
-        title: 'Pool shiny',
+        title: 'Kitchen table',
     },
     {
         img: '/img/sailfish/master-bedroom.webp',
-        title: 'Pool shiny',
+        title: 'Master bedroom',
     },
     {
         img: '/img/sailfish/bed-window.webp',
         title: 'Pool shiny',
+    },
+    {
+        img: '/img/sailfish/giant-jenga.webp',
+        title: 'Giant jenga',
     },
 ]
